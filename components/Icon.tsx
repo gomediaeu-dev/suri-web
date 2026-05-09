@@ -22,7 +22,13 @@ export type IconName =
   | "send"
   | "x"
   | "menu"
-  | "arrow-right";
+  | "arrow-right"
+  | "compass"
+  | "code"
+  | "brain"
+  | "cpu"
+  | "graduation"
+  | "layers";
 
 const PATHS: Record<IconName, React.ReactNode> = {
   chart: (
@@ -147,6 +153,51 @@ const PATHS: Record<IconName, React.ReactNode> = {
     <>
       <line x1="5" y1="12" x2="19" y2="12" />
       <polyline points="12 5 19 12 12 19" />
+    </>
+  ),
+  compass: (
+    <>
+      <circle cx="12" cy="12" r="10" />
+      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+    </>
+  ),
+  code: (
+    <>
+      <polyline points="16 18 22 12 16 6" />
+      <polyline points="8 6 2 12 8 18" />
+    </>
+  ),
+  brain: (
+    <>
+      <path d="M12 5a3 3 0 1 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0-3 3 3 3 0 0 0 0 6 4 4 0 0 0 4 4 3 3 0 0 0 5 0 4 4 0 0 0 4-4 3 3 0 0 0 0-6 3 3 0 0 0-3-3 3 3 0 0 0-1-3z" />
+      <path d="M12 5v17" />
+    </>
+  ),
+  cpu: (
+    <>
+      <rect x="4" y="4" width="16" height="16" rx="2" />
+      <rect x="9" y="9" width="6" height="6" />
+      <line x1="9" y1="2" x2="9" y2="4" />
+      <line x1="15" y1="2" x2="15" y2="4" />
+      <line x1="9" y1="20" x2="9" y2="22" />
+      <line x1="15" y1="20" x2="15" y2="22" />
+      <line x1="20" y1="9" x2="22" y2="9" />
+      <line x1="20" y1="15" x2="22" y2="15" />
+      <line x1="2" y1="9" x2="4" y2="9" />
+      <line x1="2" y1="15" x2="4" y2="15" />
+    </>
+  ),
+  graduation: (
+    <>
+      <path d="M22 10L12 5 2 10l10 5 10-5z" />
+      <path d="M6 12v5c2 2 4 3 6 3s4-1 6-3v-5" />
+    </>
+  ),
+  layers: (
+    <>
+      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+      <polyline points="2 17 12 22 22 17" />
+      <polyline points="2 12 12 17 22 12" />
     </>
   ),
 };

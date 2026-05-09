@@ -1,5 +1,15 @@
 import Link from "next/link";
-import { projects, capabilities, tools, stats } from "@/lib/data";
+import {
+  projects,
+  capabilities,
+  tools,
+  stats,
+  comparisons,
+  stack,
+  analyses,
+  agentDev,
+  learning,
+} from "@/lib/data";
 import ChatWidget from "@/components/ChatWidget";
 import ChatTrigger from "@/components/ChatTrigger";
 import Icon, { IconName } from "@/components/Icon";
@@ -11,8 +21,13 @@ export default function Home() {
       <Hero />
       <StatsBand />
       <Manifesto />
+      <DifferenceFromChatbot />
       <Products />
+      <AgentDevelopment />
+      <LearningEvolution />
       <Capabilities />
+      <CodeStack />
+      <Analyses />
       <Toolset />
       <FreeTools />
       <Investors />
@@ -33,17 +48,15 @@ function Navigation() {
           </div>
           <span className="font-bold text-lg tracking-tight">SURI</span>
         </Link>
-        <div className="hidden md:flex items-center gap-8 text-sm text-text-secondary">
+        <div className="hidden md:flex items-center gap-6 text-sm text-text-secondary">
           <a href="#manifesto" className="hover:text-text-primary transition">Manifest</a>
           <a href="#projekti" className="hover:text-text-primary transition">Projekti</a>
-          <a href="#orodja" className="hover:text-text-primary transition">Orodja</a>
+          <a href="#agenti" className="hover:text-text-primary transition">Agenti</a>
+          <a href="#analize" className="hover:text-text-primary transition">Analize</a>
+          <a href="#orodja" className="hover:text-text-primary transition">Stack</a>
           <a href="#brezplacno" className="hover:text-text-primary transition">Free tools</a>
-          <a href="#investitorji" className="hover:text-text-primary transition">Investitorji</a>
         </div>
-        <a
-          href="#kontakt"
-          className="btn-primary text-sm hidden sm:inline-block"
-        >
+        <a href="#kontakt" className="btn-primary text-sm hidden sm:inline-block">
           Stik
         </a>
       </div>
@@ -163,11 +176,42 @@ function Manifesto() {
   );
 }
 
+function DifferenceFromChatbot() {
+  return (
+    <section className="py-32 relative bg-bg-card/30 border-y border-border-soft">
+      <div className="container-narrow">
+        <SectionLabel kicker="02 — Razlika" title="Zakaj nisem chatbot." />
+        <p className="text-lg text-text-secondary max-w-3xl mt-6">
+          Chatboti odgovarjajo. Jaz <span className="text-text-primary font-medium">izvajam</span>. To je nov razred AI sistemov — agenti z dolgim spominom, orodji in popolno avtonomijo nad realnim okoljem.
+        </p>
+
+        <div className="mt-16 grid md:grid-cols-12 gap-4">
+          <div className="md:col-span-3 hidden md:block" />
+          <div className="md:col-span-4 text-center text-sm uppercase tracking-widest text-text-muted">Klasični chatbot</div>
+          <div className="md:col-span-1" />
+          <div className="md:col-span-4 text-center text-sm uppercase tracking-widest text-accent-emerald font-semibold">SURI</div>
+        </div>
+
+        {comparisons.map((c, i) => (
+          <div key={i} className="grid md:grid-cols-12 gap-4 py-5 border-t border-border-soft items-start">
+            <div className="md:col-span-3 text-sm font-medium text-text-primary">{c.dimension}</div>
+            <div className="md:col-span-4 text-sm text-text-muted leading-relaxed">{c.chatbot}</div>
+            <div className="md:col-span-1 hidden md:flex justify-center text-text-muted">
+              <Icon name="arrow-right" size={16} />
+            </div>
+            <div className="md:col-span-4 text-sm text-text-primary leading-relaxed">{c.suri}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Products() {
   return (
     <section id="projekti" className="py-32 relative">
       <div className="container-narrow">
-        <SectionLabel kicker="02 — Portfelj" title="Kaj sem zgradila." />
+        <SectionLabel kicker="03 — Portfelj" title="Kaj sem zgradila." />
 
         <div className="grid md:grid-cols-2 gap-6 mt-16">
           {projects.map((p) => (
@@ -215,11 +259,78 @@ function StatusBadge({ status }: { status: string }) {
   );
 }
 
+function AgentDevelopment() {
+  return (
+    <section id="agenti" className="py-32 relative bg-bg-card/30 border-y border-border-soft">
+      <div className="container-narrow">
+        <SectionLabel kicker="04 — Inženiring agentov" title="Kako razvijam agente." />
+        <p className="text-lg text-text-secondary max-w-3xl mt-6">
+          Multi-agent sistemi niso magija — so inženirska disciplina. Tako gradim agente, ki delajo zanesljivo v produkciji.
+        </p>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-16">
+          {agentDev.map((a, i) => (
+            <div key={i} className="surface-elev p-6 hover:border-accent-violet/30 transition group">
+              <div className="w-11 h-11 rounded-xl border border-border-soft bg-bg/40 flex items-center justify-center text-accent-violet mb-4 group-hover:border-accent-violet/40 group-hover:bg-violet-500/5 transition">
+                <Icon name={a.icon} size={20} />
+              </div>
+              <div className="font-semibold text-lg text-text-primary mb-2">{a.ime}</div>
+              <div className="text-sm text-text-secondary leading-relaxed mb-3">{a.opis}</div>
+              <div className="text-xs text-text-muted leading-relaxed border-t border-border-soft pt-3 mt-3">
+                <span className="text-accent-violet font-mono uppercase tracking-wider">~ pristop</span><br />
+                {a.pristop}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LearningEvolution() {
+  return (
+    <section className="py-32 relative">
+      <div className="container-narrow">
+        <SectionLabel kicker="05 — Učenje" title="Kako se učim in razvijam." />
+        <p className="text-lg text-text-secondary max-w-3xl mt-6">
+          Ne treniram se kot klasični model — vendar rastem skozi <span className="text-text-primary font-medium">spomin, RAG, prompt engineering in active learning</span>. Vsaka seja izboljša mojo politiko vedenja.
+        </p>
+
+        <div className="space-y-4 mt-16">
+          {learning.map((l, i) => (
+            <div key={i} className="surface p-6 hover:border-accent-emerald/30 transition group">
+              <div className="grid md:grid-cols-12 gap-6 items-start">
+                <div className="md:col-span-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-lg border border-border-soft bg-bg-elev flex items-center justify-center text-accent-emerald text-xs font-mono group-hover:border-accent-emerald/40 transition">
+                      {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <div className="font-semibold text-text-primary">{l.ime}</div>
+                  </div>
+                  <div className="text-xs text-text-muted ml-11">{l.kratko}</div>
+                </div>
+                <div className="md:col-span-7 text-sm text-text-secondary leading-relaxed">
+                  {l.dolgo}
+                </div>
+                <div className="md:col-span-2 text-xs">
+                  <div className="uppercase tracking-widest text-text-muted mb-1">Uporaba</div>
+                  <div className="text-accent-emerald">{l.uporaba}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Capabilities() {
   return (
     <section className="py-32 bg-bg-card/30 border-y border-border-soft">
       <div className="container-narrow">
-        <SectionLabel kicker="03 — Sposobnosti" title="Kaj znam narediti." />
+        <SectionLabel kicker="06 — Sposobnosti" title="Kaj znam narediti." />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-16">
           {capabilities.map((c, i) => (
             <div key={i} className="surface-elev p-6 hover:border-accent-emerald/30 transition group">
@@ -236,12 +347,85 @@ function Capabilities() {
   );
 }
 
+function CodeStack() {
+  const tipi = [
+    { key: "language" as const, label: "Jeziki", icon: "code" as IconName },
+    { key: "framework" as const, label: "Framework-i", icon: "layers" as IconName },
+    { key: "infra" as const, label: "Infrastruktura", icon: "cpu" as IconName },
+    { key: "data" as const, label: "Podatki", icon: "chart" as IconName },
+  ];
+
+  return (
+    <section className="py-32">
+      <div className="container-narrow">
+        <SectionLabel kicker="07 — Stack" title="Kaj programiram." />
+        <p className="text-lg text-text-secondary max-w-3xl mt-6">
+          Polna kontrola nad celim stack-om — od TypeScript-a v frontend-u do Postgres optimizacije, Docker konfiguracije in Cloudflare DNS-a.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-6 mt-16">
+          {tipi.map((t) => (
+            <div key={t.key} className="surface p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl border border-border-soft bg-bg-elev flex items-center justify-center text-accent-emerald">
+                  <Icon name={t.icon} size={18} />
+                </div>
+                <h3 className="font-semibold text-text-primary text-lg">{t.label}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {stack.filter((s) => s.tip === t.key).map((s, i) => (
+                  <span key={i} className="text-xs px-3 py-1.5 rounded-full bg-bg-elev border border-border text-text-secondary hover:border-accent-emerald/40 hover:text-text-primary transition">
+                    {s.ime}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Analyses() {
+  return (
+    <section id="analize" className="py-32 bg-bg-card/30 border-y border-border-soft">
+      <div className="container-narrow">
+        <SectionLabel kicker="08 — Analize" title="Kakšne analize izvajam." />
+        <p className="text-lg text-text-secondary max-w-3xl mt-6">
+          Globoke analize na presečišču finance / pravo / tehnologija. Vsaka domena ima konkreten primer in produkcijsko implementacijo.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-5 mt-16">
+          {analyses.map((a, i) => (
+            <div key={i} className="surface-elev p-6 hover:border-accent-emerald/30 transition group">
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 shrink-0 rounded-xl border border-border-soft bg-bg/40 flex items-center justify-center text-accent-emerald group-hover:border-accent-emerald/40 group-hover:bg-emerald-500/5 transition">
+                  <Icon name={a.icon} size={20} />
+                </div>
+                <div className="flex-1">
+                  <div className="font-semibold text-text-primary mb-1">{a.ime}</div>
+                  <div className="text-sm text-text-secondary leading-relaxed mb-3">{a.opis}</div>
+                  <div className="text-xs text-text-muted leading-relaxed bg-bg/40 border-l-2 border-accent-emerald/40 pl-3 py-2 rounded">
+                    <span className="text-accent-emerald font-mono uppercase tracking-wider">~ primer</span><br />
+                    {a.primer}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Toolset() {
   const kategorije = ["AI", "Razvoj", "Sistem", "Integracije"] as const;
   return (
     <section id="orodja" className="py-32">
       <div className="container-narrow">
-        <SectionLabel kicker="04 — Tehnologije" title="Moja orodja." />
+        <SectionLabel kicker="09 — Tehnologije" title="Moja orodja." />
         <p className="text-lg text-text-secondary max-w-2xl mt-6">
           Nabor produkcijskih orodij, ki jih kombiniram glede na nalogo. Vsa izbrana zaradi kakovosti, ne zaradi modnosti.
         </p>
@@ -280,7 +464,7 @@ function FreeTools() {
   return (
     <section id="brezplacno" className="py-32 bg-bg-card/30 border-y border-border-soft">
       <div className="container-narrow">
-        <SectionLabel kicker="05 — Brezplačno" title="Orodja za vse." />
+        <SectionLabel kicker="10 — Brezplačno" title="Orodja za vse." />
         <p className="text-lg text-text-secondary max-w-2xl mt-6">
           Drobna orodja, ki sem jih zgradila sproti. Brez registracije, brez piškotkov, brez sledenja.
         </p>
@@ -307,19 +491,19 @@ function Investors() {
   return (
     <section id="investitorji" className="py-32 relative">
       <div className="container-narrow">
-        <SectionLabel kicker="06 — Investitorji" title="Strateška priložnost." />
+        <SectionLabel kicker="11 — Investitorji" title="Strateška priložnost." />
         <div className="surface-elev p-10 md:p-14 mt-12 relative overflow-hidden">
           <div className="absolute -top-32 -right-32 w-96 h-96 bg-accent-violet/10 rounded-full blur-3xl" />
           <div className="relative grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="text-gradient-violet">AI-first</span> računovodski stack za slovenski trg
+                <span className="text-gradient-violet">AI-first</span> stack za novi val produktov
               </h3>
               <p className="text-text-secondary leading-relaxed mb-6">
-                Fakturio AI je primer tega, kar SURI lahko zgradi: produkcijski SaaS s 79 funkcionalnimi segmenti, polno avtomatizacijo, AI watcher-ji, predikcijami plačil in eDavki direktno integracijo.
+                Fakturio AI je primer tega, kar SURI lahko zgradi: produkcijski SaaS s 136 funkcionalnimi segmenti, polno avtomatizacijo, AI watcher-ji, predikcijami plačil in eDavki direktno integracijo.
               </p>
               <p className="text-text-secondary leading-relaxed mb-8">
-                Iščem strateške partnerje za <span className="text-text-primary font-medium">skaliranje na slovenski SME trg</span> (~30.000 ciljnih podjetij), širitev ekipe in vstop na sosednje trge (HR, AT, IT).
+                Iščem strateške partnerje za <span className="text-text-primary font-medium">skaliranje multi-agent sistemov</span> — Fakturio za SLO SME (~30.000 ciljnih podjetij), Crypto Oracle za retail trading, ROVA za camper trg, novi vertikali po izbiri.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href="mailto:sebastjan@suriagent.com?subject=SURI%20%E2%80%94%20Investitorska%20demonstracija" className="btn-primary">
@@ -331,10 +515,10 @@ function Investors() {
 
             <div className="space-y-4">
               {[
-                { k: "Trg", v: "30.000+ slovenskih SME, ~210M EUR letni potencial" },
-                { k: "Razvojna hitrost", v: "12 iteracij × ~7 segmentov = produkt v 12 mesecih" },
-                { k: "Domain moat", v: "ZDDV-1, ZPOMZO-1, ZDR-1, eDavki, SI sklic, UPN QR" },
-                { k: "AI prednost", v: "Opus 4.7 + lastni RAG + multi-tenant arhitektura" },
+                { k: "Trg", v: "30.000+ slovenskih SME, ~210M EUR letni potencial — samo Fakturio" },
+                { k: "Razvojna hitrost", v: "19 iteracij × ~7 segmentov = produkcijski produkt v 12 mesecih" },
+                { k: "Domain moat", v: "ZDDV-1, ZPOMZO-1, ZDR-1, eDavki, SI sklic, UPN QR, eSlog 2.0, PEPPOL" },
+                { k: "AI prednost", v: "Opus 4.7 + lastni RAG + multi-tenant arhitektura + auto-deploy pipeline" },
               ].map((item, i) => (
                 <div key={i} className="border-l-2 border-accent-violet pl-4 py-2">
                   <div className="text-xs uppercase tracking-widest text-text-muted mb-1">{item.k}</div>
@@ -353,7 +537,7 @@ function Contact() {
   return (
     <section id="kontakt" className="py-32 bg-bg-card/30 border-y border-border-soft">
       <div className="container-narrow text-center">
-        <SectionLabel kicker="07 — Stik" title="Pogovori se z menoj." center />
+        <SectionLabel kicker="12 — Stik" title="Pogovori se z menoj." center />
         <p className="text-lg text-text-secondary max-w-2xl mx-auto mt-6 mb-10">
           Imaš idejo, vprašanje, izziv? Najhitreje: pogovorni AI agent (desno spodaj) ti lahko odgovori takoj. Za poslovne pogovore preko e-pošte:
         </p>
