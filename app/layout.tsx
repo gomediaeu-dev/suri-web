@@ -8,14 +8,15 @@ export const metadata: Metadata = {
   keywords: [
     "SURI",
     "AI agent",
+    "Multi-agent AI",
     "Claude",
     "Anthropic",
     "razvoj programske opreme",
     "avtonomni agenti",
+    "Sebastjan Groznik",
     "Slovenija",
-    "GO MEDIA",
   ],
-  authors: [{ name: "Sebastjan Groznik", url: "https://gomedia.eu" }],
+  authors: [{ name: "Sebastjan Groznik", url: "https://suriagent.com" }],
   openGraph: {
     title: "SURI — AI razvojna partnerka",
     description:

@@ -1,6 +1,6 @@
 # SURI Web — promocijska + identitetna stran
 
-Premium dark-themed Next.js 14 stran za **SURI** (AI razvojna partnerka Sebastjana Groznika / GO MEDIA d.o.o.).
+Premium dark-themed Next.js 14 stran za **SURI** — AI razvojna partnerka **Sebastjana Groznika** (Multi AI agents system developing engineer).
 
 **Stack:** Next.js 14 App Router · TypeScript · Tailwind · Vault theme · Claude Opus 4.7 streaming chat
 

@@ -83,12 +83,12 @@ function Hero() {
           <ChatTrigger>✦  Pogovori se z mano</ChatTrigger>
         </div>
 
-        <div className="mt-20 flex items-center gap-3 text-sm text-text-muted animate-fade-in [animation-delay:400ms]">
+        <div className="mt-20 flex flex-wrap items-center gap-3 text-sm text-text-muted animate-fade-in [animation-delay:400ms]">
           <span className="font-mono">~</span>
           <span>Zgrajeno za:</span>
           <span className="text-text-primary font-medium">Sebastjan Groznik</span>
           <span className="opacity-30">·</span>
-          <span className="text-text-primary font-medium">GO MEDIA d.o.o.</span>
+          <span className="text-text-primary font-medium">Multi AI agents system developing engineer</span>
         </div>
       </div>
     </section>
@@ -311,7 +311,7 @@ function Investors() {
                 Iščem strateške partnerje za <span className="text-text-primary font-medium">skaliranje na slovenski SME trg</span> (~30.000 ciljnih podjetij), širitev ekipe in vstop na sosednje trge (HR, AT, IT).
               </p>
               <div className="flex flex-wrap gap-3">
-                <a href="mailto:gomedia.eu@gmail.com?subject=SURI%20%E2%80%94%20Investitorska%20demonstracija" className="btn-primary">
+                <a href="mailto:sebastjan@suriagent.com?subject=SURI%20%E2%80%94%20Investitorska%20demonstracija" className="btn-primary">
                   Zahtevaj pitch deck
                 </a>
                 <a href="#kontakt" className="btn-ghost">Dogovor termin</a>
@@ -348,8 +348,8 @@ function Contact() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
-          <a href="mailto:gomedia.eu@gmail.com" className="btn-primary">
-            gomedia.eu@gmail.com
+          <a href="mailto:sebastjan@suriagent.com" className="btn-primary">
+            sebastjan@suriagent.com
           </a>
           <ChatTrigger>Odpri AI chat</ChatTrigger>
         </div>
@@ -364,7 +364,7 @@ function Footer() {
       <div className="container-narrow">
         <div className="font-mono mb-3">SURI v1.0 · Claude Opus 4.7 · Vault theme</div>
         <div>
-          Zgrajeno za GO MEDIA d.o.o. · {new Date().getFullYear()} · Slovenija
+          Zgrajeno s Sebastjanom Groznikom · {new Date().getFullYear()} · Slovenija
         </div>
       </div>
     </footer>
