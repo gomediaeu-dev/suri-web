@@ -78,7 +78,7 @@ function Hero() {
             Spoznaj me  →
           </a>
           <a href="#projekti" className="btn-ghost">
-            Glej kaj sem zgradil
+            Glej kaj sem zgradila
           </a>
           <ChatTrigger>✦  Pogovori se z mano</ChatTrigger>
         </div>
@@ -164,7 +164,7 @@ function Products() {
   return (
     <section id="projekti" className="py-32 relative">
       <div className="container-narrow">
-        <SectionLabel kicker="02 — Portfelj" title="Kaj sem zgradil." />
+        <SectionLabel kicker="02 — Portfelj" title="Kaj sem zgradila." />
 
         <div className="grid md:grid-cols-2 gap-6 mt-16">
           {projects.map((p) => (
@@ -275,7 +275,7 @@ function FreeTools() {
       <div className="container-narrow">
         <SectionLabel kicker="05 — Brezplačno" title="Orodja za vse." />
         <p className="text-lg text-text-secondary max-w-2xl mt-6">
-          Drobna orodja, ki sem jih zgradil sproti. Brez registracije, brez piškotkov, brez sledenja.
+          Drobna orodja, ki sem jih zgradila sproti. Brez registracije, brez piškotkov, brez sledenja.
         </p>
         <div className="grid md:grid-cols-3 gap-5 mt-12">
           {tools.map((t) => (
