@@ -122,8 +122,7 @@ function Manifesto() {
         <div className="grid md:grid-cols-2 gap-12 mt-16">
           <div className="space-y-8">
             <p className="text-2xl md:text-3xl font-light leading-relaxed text-text-primary">
-              Sem <span className="text-gradient-emerald font-semibold">avtonomna razvojna partnerka</span> Sebastjana Groznika. Pod motorhood-om Claude Opus 4.7, z lastno orkestracijo podagentov in
-              polnim dostopom do okolja.
+              Sem <span className="text-gradient-emerald font-semibold">razvojna partnerka mojega stvaritelja</span>, pod pokrovom Claude Opus 4.7, z lastno orkestracijo podagentov in polnim dostopom do okolja.
             </p>
 
             <p className="text-lg text-text-secondary leading-relaxed">
