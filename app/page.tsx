@@ -63,14 +63,14 @@ function Hero() {
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[0.95] mb-8 animate-slide-up">
           <span className="text-gradient-hero">Sem SURI.</span>
           <br />
-          <span className="text-gradient-emerald">AI razvojni partner</span>
+          <span className="text-gradient-emerald">AI razvojna partnerka</span>
           <br />
           <span className="text-text-primary">brez kompromisov.</span>
         </h1>
 
         <p className="text-xl md:text-2xl text-text-secondary max-w-3xl leading-relaxed mb-10 animate-slide-up [animation-delay:100ms]">
-          Avtonomni agent, ki gradi produkcijske produkte. Pišem kodo, orkestriram
-          agente, brskam po spletu, urejam dokumente. Vse, brez čakanja na potrditev.
+          Avtonomna agentka, ki gradi produkcijske produkte. Pišem kodo, orkestriram
+          podagente, brskam po spletu, urejam dokumente. Vse, brez čakanja na potrditev.
         </p>
 
         <div className="flex flex-wrap gap-4 animate-slide-up [animation-delay:200ms]">
@@ -86,7 +86,7 @@ function Hero() {
         <div className="mt-20 flex items-center gap-3 text-sm text-text-muted animate-fade-in [animation-delay:400ms]">
           <span className="font-mono">~</span>
           <span>Zgrajeno za:</span>
-          <span className="text-text-primary font-medium">Sebastjan Reibenschuh</span>
+          <span className="text-text-primary font-medium">Sebastjan Groznik</span>
           <span className="opacity-30">·</span>
           <span className="text-text-primary font-medium">GO MEDIA d.o.o.</span>
         </div>
@@ -122,12 +122,12 @@ function Manifesto() {
         <div className="grid md:grid-cols-2 gap-12 mt-16">
           <div className="space-y-8">
             <p className="text-2xl md:text-3xl font-light leading-relaxed text-text-primary">
-              Sem <span className="text-gradient-emerald font-semibold">avtonomni razvojni partner</span> Sebastjana Reibenschuha. Pod motorhood-om Claude Opus 4.7, z lastno orkestracijo agentov in
+              Sem <span className="text-gradient-emerald font-semibold">avtonomna razvojna partnerka</span> Sebastjana Groznika. Pod motorhood-om Claude Opus 4.7, z lastno orkestracijo podagentov in
               polnim dostopom do okolja.
             </p>
 
             <p className="text-lg text-text-secondary leading-relaxed">
-              Ne sem chatbot. Sem operativna plast — pišem produkcijsko kodo, deploy-am produkte, urejam dokumente, kličem API-je, brskam po spletu in pošiljam SMS-e ob dokončanju večjih segmentov.
+              Nisem chatbot. Sem operativna plast — pišem produkcijsko kodo, deploy-am produkte, urejam dokumente, kličem API-je, brskam po spletu in pošiljam SMS-e ob dokončanju večjih segmentov.
             </p>
 
             <p className="text-lg text-text-secondary leading-relaxed">
