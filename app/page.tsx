@@ -2,6 +2,7 @@ import Link from "next/link";
 import { projects, capabilities, tools, stats } from "@/lib/data";
 import ChatWidget from "@/components/ChatWidget";
 import ChatTrigger from "@/components/ChatTrigger";
+import Icon, { IconName } from "@/components/Icon";
 
 export default function Home() {
   return (
@@ -74,13 +75,16 @@ function Hero() {
         </p>
 
         <div className="flex flex-wrap gap-4 animate-slide-up [animation-delay:200ms]">
-          <a href="#manifesto" className="btn-primary">
-            Spoznaj me  →
+          <a href="#manifesto" className="btn-primary inline-flex items-center gap-2">
+            Spoznaj me <Icon name="arrow-right" size={16} />
           </a>
           <a href="#projekti" className="btn-ghost">
             Glej kaj sem zgradila
           </a>
-          <ChatTrigger>✦  Pogovori se z mano</ChatTrigger>
+          <ChatTrigger className="btn-ghost inline-flex items-center gap-2">
+            <Icon name="sparkle" size={16} className="text-accent-emerald" />
+            Pogovori se z mano
+          </ChatTrigger>
         </div>
 
         <div className="mt-20 flex flex-wrap items-center gap-3 text-sm text-text-muted animate-fade-in [animation-delay:400ms]">
@@ -170,9 +174,11 @@ function Products() {
             <div key={p.ime} className="surface p-8 group hover:border-accent-emerald/30 transition relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-accent-emerald/5 rounded-full blur-3xl group-hover:bg-accent-emerald/10 transition" />
               <div className="relative">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <div className="text-3xl mb-2">{p.emoji}</div>
+                <div className="flex items-start justify-between mb-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-11 h-11 rounded-xl border border-border-soft bg-bg-elev flex items-center justify-center text-accent-emerald group-hover:border-accent-emerald/40 group-hover:bg-emerald-500/5 transition">
+                      <Icon name={p.icon} size={20} />
+                    </div>
                     <h3 className="text-2xl font-bold text-text-primary">{p.ime}</h3>
                   </div>
                   <StatusBadge status={p.status} />
@@ -182,8 +188,8 @@ function Products() {
 
                 <ul className="space-y-2">
                   {p.highlights.map((h, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm">
-                      <span className="text-accent-emerald mt-0.5">✦</span>
+                    <li key={j} className="flex items-start gap-2.5 text-sm">
+                      <Icon name="arrow-right" size={14} className="text-accent-emerald mt-1 shrink-0" />
                       <span className="text-text-secondary">{h}</span>
                     </li>
                   ))}
@@ -216,8 +222,10 @@ function Capabilities() {
         <SectionLabel kicker="03 — Sposobnosti" title="Kaj znam narediti." />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-16">
           {capabilities.map((c, i) => (
-            <div key={i} className="surface-elev p-6 hover:border-accent-emerald/30 transition">
-              <div className="text-3xl mb-3">{c.ikona}</div>
+            <div key={i} className="surface-elev p-6 hover:border-accent-emerald/30 transition group">
+              <div className="w-11 h-11 rounded-xl border border-border-soft bg-bg/40 flex items-center justify-center text-accent-emerald mb-4 group-hover:border-accent-emerald/40 group-hover:bg-emerald-500/5 transition">
+                <Icon name={c.icon} size={20} />
+              </div>
               <div className="font-semibold text-lg text-text-primary mb-2">{c.ime}</div>
               <div className="text-sm text-text-secondary leading-relaxed">{c.opis}</div>
             </div>
@@ -264,10 +272,10 @@ function Toolset() {
 }
 
 function FreeTools() {
-  const tools = [
-    { ime: "DDV kalkulator", opis: "Hitri obračun DDV — neto/bruto/22%/9.5%", href: "/orodja/ddv", ikona: "₿" },
-    { ime: "IBAN preverjalec", opis: "Validacija IBAN številke (slovenski bančni račun)", href: "/orodja/iban", ikona: "✓" },
-    { ime: "Regres kalkulator", opis: "Minimum regres za 2026 + neto/bruto", href: "/orodja/regres", ikona: "€" },
+  const items: { ime: string; opis: string; href: string; icon: IconName }[] = [
+    { ime: "DDV kalkulator", opis: "Hitri obračun DDV — neto/bruto/22%/9.5%", href: "/orodja/ddv", icon: "calculator" },
+    { ime: "IBAN preverjalec", opis: "Validacija IBAN številke (slovenski bančni račun)", href: "/orodja/iban", icon: "shield-check" },
+    { ime: "Regres kalkulator", opis: "Minimum regres za 2026 + neto/bruto", href: "/orodja/regres", icon: "wallet" },
   ];
   return (
     <section id="brezplacno" className="py-32 bg-bg-card/30 border-y border-border-soft">
@@ -277,12 +285,16 @@ function FreeTools() {
           Drobna orodja, ki sem jih zgradila sproti. Brez registracije, brez piškotkov, brez sledenja.
         </p>
         <div className="grid md:grid-cols-3 gap-5 mt-12">
-          {tools.map((t) => (
+          {items.map((t) => (
             <Link key={t.ime} href={t.href} className="surface p-6 hover:border-accent-emerald/40 hover:translate-y-[-2px] transition block group">
-              <div className="text-3xl text-gradient-emerald mb-3 group-hover:scale-110 transition">{t.ikona}</div>
+              <div className="w-11 h-11 rounded-xl border border-border-soft bg-bg-elev flex items-center justify-center text-accent-emerald mb-4 group-hover:border-accent-emerald/40 group-hover:bg-emerald-500/5 transition">
+                <Icon name={t.icon} size={20} />
+              </div>
               <div className="font-semibold text-text-primary mb-1">{t.ime}</div>
               <div className="text-sm text-text-secondary">{t.opis}</div>
-              <div className="mt-4 text-sm text-accent-emerald opacity-0 group-hover:opacity-100 transition">Odpri →</div>
+              <div className="mt-4 text-sm text-accent-emerald flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition">
+                Odpri <Icon name="arrow-right" size={14} />
+              </div>
             </Link>
           ))}
         </div>

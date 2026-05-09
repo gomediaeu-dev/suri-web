@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Icon from "./Icon";
 
 export default function ToolShell({
   kicker,
@@ -15,7 +16,8 @@ export default function ToolShell({
     <div className="min-h-screen pb-24">
       <nav className="container-narrow py-6">
         <Link href="/" className="inline-flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary transition">
-          <span>←</span> Nazaj na SURI
+          <Icon name="arrow-right" size={14} className="rotate-180" />
+          Nazaj na SURI
         </Link>
       </nav>
       <div className="container-narrow pt-12">

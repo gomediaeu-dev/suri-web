@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import ToolShell from "@/components/ToolShell";
+import Icon from "@/components/Icon";
 
 const MIN_REGRES_2026 = 1277.72;
 const POVPRECNA_PLACA_2026 = 2400; // SURS okvirna ocena za 2026
@@ -65,7 +66,9 @@ export default function RegresKalkulator() {
 
           <div className={`surface-elev p-4 ${rezultat.ustreza ? "border-emerald-500/40" : "border-amber-500/40"}`}>
             <div className="flex items-start gap-3">
-              <div className="text-2xl">{rezultat.ustreza ? "✓" : "⚠"}</div>
+              <div className={`w-9 h-9 shrink-0 rounded-lg border flex items-center justify-center ${rezultat.ustreza ? "bg-emerald-500/15 border-emerald-500/30 text-emerald-400" : "bg-amber-500/15 border-amber-500/30 text-amber-400"}`}>
+                <Icon name={rezultat.ustreza ? "shield-check" : "bolt"} size={18} />
+              </div>
               <div className="text-sm">
                 {rezultat.ustreza ? (
                   <>
@@ -85,7 +88,9 @@ export default function RegresKalkulator() {
           {rezultat.presega && (
             <div className="surface-elev p-4 border-violet-500/40">
               <div className="flex items-start gap-3">
-                <div className="text-2xl">ℹ</div>
+                <div className="w-9 h-9 shrink-0 rounded-lg bg-violet-500/15 border border-violet-500/30 text-violet-400 flex items-center justify-center">
+                  <Icon name="sparkle" size={18} />
+                </div>
                 <div className="text-sm">
                   <strong className="text-violet-400">Del regresa je obdavčen.</strong>
                   <div className="text-text-secondary mt-1">

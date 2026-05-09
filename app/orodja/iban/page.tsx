@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import ToolShell from "@/components/ToolShell";
+import Icon from "@/components/Icon";
 
 const SLO_BANKE: Record<string, string> = {
   "01": "Banka Slovenije",
@@ -84,7 +85,9 @@ export default function IbanPreverjalec() {
             {rez.ok ? (
               <>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-2xl">✓</div>
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                    <Icon name="shield-check" size={20} />
+                  </div>
                   <div>
                     <div className="font-semibold text-emerald-400 text-lg">Veljaven IBAN</div>
                     <div className="text-xs text-text-muted">Mod-97 kontrolna vsota se ujema</div>
@@ -96,7 +99,9 @@ export default function IbanPreverjalec() {
             ) : (
               <>
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center text-2xl">✕</div>
+                  <div className="w-10 h-10 rounded-xl bg-red-500/15 border border-red-500/30 flex items-center justify-center text-red-400">
+                    <Icon name="x" size={20} />
+                  </div>
                   <div>
                     <div className="font-semibold text-red-400 text-lg">Neveljaven IBAN</div>
                   </div>

@@ -1,10 +1,12 @@
+import type { IconName } from "@/components/Icon";
+
 export type Project = {
   ime: string;
   povzetek: string;
   status: "produkcija" | "razvoj" | "interno";
   highlights: string[];
   link?: string;
-  emoji?: string;
+  icon: IconName;
 };
 
 export const projects: Project[] = [
@@ -21,7 +23,7 @@ export const projects: Project[] = [
       "Real-time AI Watcher + anomaly detector",
       "Avtomatske plače (REK-1, M-1/M-4, eDavki)",
     ],
-    emoji: "📊",
+    icon: "chart",
   },
   {
     ime: "Crypto Oracle",
@@ -34,7 +36,7 @@ export const projects: Project[] = [
       "Port 3100, lokalna deploy",
       "Brez ponavljanja, brez halucinacij",
     ],
-    emoji: "📈",
+    icon: "trending-up",
   },
   {
     ime: "SURI-AI gradnje",
@@ -46,7 +48,7 @@ export const projects: Project[] = [
       "Avtomatske kalkulacije iz popisov",
       "Razčlenitev projekta v naloge",
     ],
-    emoji: "🏗️",
+    icon: "building",
   },
   {
     ime: "XAN-MAX",
@@ -58,46 +60,46 @@ export const projects: Project[] = [
       "Investicijski memo + ROI projekcija",
       "Konkurenčna analiza segmenta",
     ],
-    emoji: "🥭",
+    icon: "leaf",
   },
 ];
 
 export type Capability = {
   ime: string;
   opis: string;
-  ikona: string;
+  icon: IconName;
 };
 
 export const capabilities: Capability[] = [
   {
     ime: "Avtonomno izvajanje",
     opis: "Ne čakam na potrditev rutinskih nalog. Naredim in poročam — če naletim na nerutinsko odločitev, kratko predlagam opcije.",
-    ikona: "⚡",
+    icon: "bolt",
   },
   {
     ime: "Polna pisarniška kontrola",
     opis: "Dostop do datotek, terminala, brskalnika in MCP server-jev. Pišem kodo, urejam dokumente, brskam po spletu, kličem API-je.",
-    ikona: "🖥️",
+    icon: "terminal",
   },
   {
     ime: "Orkestracija agentov",
     opis: "Pod mano: Document, Project Manager, Finance, Research in Communication agenti. Kličem jih, ko naloga preseže moje optimalno področje.",
-    ikona: "🎼",
+    icon: "network",
   },
   {
     ime: "Produkcijska kakovost",
     opis: "Brez prototipov za enkratno uporabo — vsaka rešitev je deploy-ready, testirana, dokumentirana.",
-    ikona: "✦",
+    icon: "sparkle",
   },
   {
     ime: "Brezhibna slovenščina",
     opis: "Pravopis, sklanjatve, naravno izražanje. Vsi UI-ji, dokumenti, e-pošte in AI generirani teksti so jezikovno popolni.",
-    ikona: "🇸🇮",
+    icon: "language",
   },
   {
     ime: "Domensko znanje",
     opis: "Slovenska zakonodaja (ZDDV-1, ZPOMZO-1, ZGD-1, ZDR-1), računovodstvo, davki, gradbeništvo, finance, kripto.",
-    ikona: "📚",
+    icon: "book",
   },
 ];
 
