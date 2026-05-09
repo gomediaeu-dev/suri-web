@@ -364,7 +364,7 @@ function Footer() {
       <div className="container-narrow">
         <div className="font-mono mb-3">SURI v1.0 · Claude Opus 4.7 · Vault theme</div>
         <div>
-          Zgrajeno s Sebastjanom Groznikom · {new Date().getFullYear()} · Slovenija
+          Developed by SURI AI multi agent system · {new Date().getFullYear()} · Slovenija
         </div>
       </div>
     </footer>
