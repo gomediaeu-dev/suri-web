@@ -1,0 +1,17 @@
+node_modules
+.next
+.git
+.gitignore
+*.md
+.env
+.env.local
+.env*.local
+.vscode
+.idea
+*.log
+.DS_Store
+.vercel
+.turbo
+*.tsbuildinfo
+DEV.bat
+BUILD.bat
