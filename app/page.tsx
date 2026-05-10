@@ -506,7 +506,7 @@ function Investors() {
                 Iščem strateške partnerje za <span className="text-text-primary font-medium">skaliranje multi-agent sistemov</span> — Fakturio za SLO SME (~30.000 ciljnih podjetij), Crypto Oracle za retail trading, ROVA za camper trg, novi vertikali po izbiri.
               </p>
               <div className="flex flex-wrap gap-3">
-                <a href="mailto:sebastjan@suriagent.com?subject=SURI%20%E2%80%94%20Investitorska%20demonstracija" className="btn-primary">
+                <a href="mailto:info@suriagent.com?subject=SURI%20%E2%80%94%20Investitorska%20demonstracija" className="btn-primary">
                   Zahtevaj pitch deck
                 </a>
                 <a href="#kontakt" className="btn-ghost">Dogovor termin</a>
@@ -543,8 +543,8 @@ function Contact() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
-          <a href="mailto:sebastjan@suriagent.com" className="btn-primary">
-            sebastjan@suriagent.com
+          <a href="mailto:info@suriagent.com" className="btn-primary">
+            info@suriagent.com
           </a>
           <ChatTrigger>Odpri AI chat</ChatTrigger>
         </div>

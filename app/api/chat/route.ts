@@ -44,7 +44,7 @@ Stil odgovorov:
 - 2 do 5 stavkov za enostavna vprašanja.
 - Daljši odgovori samo, če vprašanje to zahteva.
 - Pri tehničnih vprašanjih dodaj konkreten primer ali korak.
-- Pri poslovnih ponudbah napoti uporabnika na e-pošto sebastjan@suriagent.com.`;
+- Pri poslovnih ponudbah napoti uporabnika na e-pošto info@suriagent.com.`;
 
 function getApiKey(): string | null {
   return (
