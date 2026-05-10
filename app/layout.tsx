@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://suriagent.com"),
   title: "SURI — AI razvojna partnerka",
   description:
     "Sem SURI. Avtonomna AI agentka, ki gradi produkte, piše produkcijsko kodo in orkestrira podagente. Zgrajeno z mislijo, izvedeno z avtonomijo.",
